@@ -32,7 +32,7 @@
  * 
  * 3. Write css based on any attribute:
  * 
- * [attribute = 'value'] - Ex: - [type='username'] // [value="Login"]
+ * [attribute = 'value'] - Ex: - [type='username'].first() // [value="Login"]
  * 
  * tagname[attribute = 'value'] [id='value]
  *  
@@ -45,6 +45,10 @@
  * #userEmail-wrapper input
  * 
  * #form #username
+ * 
+ * first() - first matching
+ * last() - last matching
+ * nth(index) - nth(1)
  * 
  * 5. By writing the locators based on the text:
  * 
@@ -62,7 +66,7 @@
 
 // In xpath the index will starts from 1 
 
-//tagname or *[@attribute = 'value']
+//tagname or *[@attribute = 'value'] - //*[@attribute = 'value']
 
 1.// (//*[@attribute='value'])[1]
 
@@ -70,7 +74,7 @@
 
 2. (//tagname[@attribute='value'])[1]
 
-//input[@id='userEmail']
+(//input[@id='userEmail'])[1]
 
 3. // Parent to child
 
@@ -89,10 +93,21 @@
 
 
 // 6. //h2[text() = 'Test login']  -  //h5[text() = 'Student Registration Form']
-// 7. //h2[contains(text(), 'Test')]
+// 7. (//h2[contains(text(), 'Test')])[1]
 
 //Syntcx:
 // * or tagName[contains(text(), 'Registration')]
+//h2[contains(text(), 'login')]/parent::section
+
+
+
+// 8. From child to parent traversing
+
+// * or tagname [@attribute='value']/parent::parentTag
+
+
+
+// <div id ='abc'> Email </div>
 
 
 */

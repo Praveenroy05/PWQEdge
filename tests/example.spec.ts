@@ -7,6 +7,8 @@ test('has title',  async function( {page} ) {
   await page.locator("#submit").click()
   await expect(page.locator("h1.post-title")).toBeVisible()
 
+  page.getByRole('button', { name: 'Sign up' }) // Sign ups
+
 
   // async-await 
 
@@ -31,4 +33,19 @@ test('has title',  async function( {page} ) {
   
 
 });
+
+
+test("Fill the textbox", async({page})=>{
+  await page.goto("https://demoqa.com/automation-practice-form")
+  // By using css or xpath - page.locator("css or xpath")
+  await page.getByPlaceholder("First Name").fill("Testing")
+  await page.getByRole('checkbox', {name: 'Sports'}).click({force: true})
+
+  // nth(index)
+  // first()
+  // last()
+
+  await page.waitForTimeout(5000)
+
+})
 

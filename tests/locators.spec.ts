@@ -126,13 +126,16 @@ page.getByText('Student Registration Form', {exact: true}) to locate by text con
 
 page.getByLabel() to locate a form control by associated label's text.
 
+1. WHen you have for as an attribute for an element that have been developed using <label> - there we can directly use page.getByLable('label text')
+2. When you find out <input> inside the <label> - 
+
 page.getByPlaceholder('First Name')  - to locate an input by placeholder as an attribute.
 
 page.getByAltText() to locate an element, usually image, by its text alternative.(alt as an attribute)
 
 page.getByTitle() to locate an element by its title attribute.
 
-page.getByTestId() to locate an element based on its data-testid attribute (other attributes can be configured).
+page.getByTestId() to locate an element based on its "data-testid" attribute (other attributes can be configured).
 
 
 */

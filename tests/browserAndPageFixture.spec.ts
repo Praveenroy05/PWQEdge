@@ -19,7 +19,7 @@ test("browser fixture", async ({browser})=>{
 
 })
 
-test.only("page fixture", async ({page})=>{
+test("page fixture", async ({page})=>{
   await page.goto('https://practicetestautomation.com/practice-test-login/')
   await page.locator("#username").fill("student")
   await page.locator("#password").fill("Password123")

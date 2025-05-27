@@ -7,7 +7,7 @@ test('has title',  async function( {page} ) {
   await page.locator("#submit").click()
   await expect(page.locator("h1.post-title")).toBeVisible()
 
-  page.getByRole('button', { name: 'Sign up' }) // Sign ups
+ // page.getByRole('button', { name: 'Sign up' }) // Sign ups
 
 
   // async-await 

@@ -6,7 +6,6 @@
 // ......
 
 import {test, expect} from '@playwright/test'
-import { text } from 'stream/consumers'
 
 test("Handling alerts", async ({page})=>{
     await page.goto("https://demoqa.com/alerts")

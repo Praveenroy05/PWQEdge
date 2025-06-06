@@ -24,6 +24,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : 2,// undefined means 8 test cases will run in a parallel
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
+  //timeout : 120000,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -92,6 +93,9 @@ export default defineConfig({
 3. When you have fullyParallel : fasle and workers are >1 - in that case the test files will start running in a parallel
 
 4. When you have fullyParallel : false and workers is 1 - in that case the test case will start running in a sequencial order
+
+To open a tst runner  - npx playwright test --ui
+To open a codegen (Record and Playback tool) - npx playwright codegen "url"
 
 
 */

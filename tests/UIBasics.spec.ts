@@ -19,6 +19,10 @@ test("Validate login with valid username and password", async function({page}){
     await page.locator("input#username").fill("student")
     await expect(page.locator("input#username")).toHaveValue("student") // input field
     await page.locator("input#password").fill("Password123")
+
+    // pause the execution and move forward one by one step
+    // await page.pause()
+
     await expect(page.locator("input#password")).toHaveValue("Password123")
     // Click the submit button - click() - click on the matching element
     await page.getByRole('button', {name: 'Submit'}).click()

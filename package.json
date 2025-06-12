@@ -12,6 +12,7 @@
     "@types/node": "^22.15.17"
   },
   "dependencies": {
-    "qedgepwmay": "file:"
+    "qedgepwmay": "file:",
+    "tsx": "^4.20.2"
   }
 }

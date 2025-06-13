@@ -29,4 +29,13 @@ console.log(person.address.city);
 
 console.log(person["age"]);
 
+let abc = [1,2,3,4]
+
 // for .. in loop - 
+
+// Syntax:
+// for (const item in object) {...}   
+
+for(let key in person){
+    console.log(key, " : ", person[key]);
+}

@@ -1,8 +1,10 @@
 // To open/start the codegen (Record and Playback tool) - npx playwright codegen
 
 import { test, expect } from '@playwright/test';
+import { LoginPage } from './class';
 
-test('test', async ({ page }) => {
+
+test('test', async function({ page }) {
   await page.goto('https://demo.automationtesting.in/Windows.html');
   await expect(page.getByRole('button', { name: 'click' })).toBeVisible();
   await expect(page.getByRole('paragraph')).toContainText('"_blank"');

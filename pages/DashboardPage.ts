@@ -1,6 +1,7 @@
 import { Locator, Page } from "playwright";
 
-class DashboarPage{
+export class DashboarPage{
+    
 
     private products : Locator
     private page :Page
@@ -22,6 +23,18 @@ class DashboarPage{
             const productText = await this.products.nth(i).locator("b").textContent() 
             if(productText === productName){
                 await this.products.nth(i).getByText("Add To Cart").click()
+                break
+            }
+        }
+    }
+
+    async searchAndViewProductDetails(productName){
+        await this.products.last().waitFor({state: 'visible'})
+        const countOfProduct = await this.products.count()
+        for(let i=0; i<countOfProduct; i++){
+            const productText = await this.products.nth(i).locator("b").textContent() 
+            if(productText === productName){
+                await this.products.nth(i).getByText("View").click()
                 break
             }
         }

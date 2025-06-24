@@ -15,13 +15,13 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: false,
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 1: 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 2,// undefined means 8 test cases will run in a parallel
+  workers: process.env.CI ? 1 : 5,// undefined means 8 test cases will run in a parallel
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   //timeout : 120000,
@@ -34,7 +34,7 @@ export default defineConfig({
     trace: 'on',
     screenshot : 'on',
     video: 'on',
-    headless : true,
+    headless : false,
     viewport: { width: 100, height: 100 },
   },
 

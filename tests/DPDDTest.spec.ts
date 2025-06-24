@@ -26,7 +26,7 @@ test.beforeEach(async ({page})=>{
     productDetailsPage = new ProductDetailsPage(page)
 })
 for(let data of datas){
-test(`Add the product to the cart validation for ${data.productName}`, async ()=>{
+test(`Add the product to the cart validation for ${data.productName}`,{tag: ['@smoke', '@regression']}, async ()=>{
     await loginPage.launchURL(data.url) // 3 times
     await loginPage.validLogin(data.email, data.password) // 3 times
     await expect(dashboardPage.homePageIdentifier).toBeVisible()

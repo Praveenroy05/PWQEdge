@@ -14,7 +14,7 @@ test.beforeEach(async ({page})=>{
     loginPage = new LoginPage(page)
     await loginPage.launchURL(data.url)
 })
-test("Valid Login Test", async () => {
+test(" @regression Valid Login Test", async () => {
     await loginPage.validLogin(data.email, data.password)
     await expect(loginPage.homePageIdentifier).toBeVisible()
 })

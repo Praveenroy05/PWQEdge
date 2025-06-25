@@ -2,11 +2,16 @@
 
 // Annotations - take control of the test execution
 // tags - snoke, regression
-// GitHub
-// Allure Report
-// Jenkins
+// Calendar
 // Shadow dom
-// API - Calendar
+// Allure Report, Monocart
+
+
+
+// GitHub - Version COntrol tool
+// Jenkins
+
+// API
 
 
 

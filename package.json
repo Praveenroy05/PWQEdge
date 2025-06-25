@@ -2,14 +2,22 @@
   "name": "qedgepwmay",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "fullTest" : "npx playwright test",
+    "smokeTest" : "npx playwright test --grep @smoke",
+    "regressionTest" : "npx playwright test --grep @regression",
+    "allure-report" : "allure serve allure-results"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.17"
+    "@types/node": "^22.15.17",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.3.0",
+    "monocart-reporter": "^2.9.21"
   },
   "dependencies": {
     "qedgepwmay": "file:",

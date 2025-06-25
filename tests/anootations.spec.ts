@@ -35,5 +35,5 @@ test("only", async ()=>{
 
 test("slow", async ()=>{
     test.slow()
-    console.log("Slow"); // Ex: - timeout of 120 seconds for this TC it will become 360 seconds
+    console.log("Slow"); // Ex: - If timeout is 120 seconds, for this TC it will become 360 seconds
 })

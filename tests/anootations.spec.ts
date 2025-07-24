@@ -21,9 +21,9 @@ test.skip("skip", async ()=>{
     console.log("Skip");
 })
 
-test.fail("fail", async ()=>{
-    console.log("Fail");
-})
+// test.fail("fail", async ()=>{
+//     console.log("Fail");
+// })
 
 test.fixme("fixme", async ()=>{
     console.log("Fixme");

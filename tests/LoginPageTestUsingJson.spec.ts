@@ -1,6 +1,7 @@
 import {test, expect} from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import data from '../TestData/login.json'
+import { DashboarPage } from '../pages/DashboardPage';
 
 // console.log("Data.url = ", data.url)
 
@@ -8,15 +9,16 @@ const incorrectPassword = "abcd"
 
 
 // pre-condition or common step - hooks
-
 let loginPage
+let dashboardPage
 test.beforeEach(async ({page})=>{
     loginPage = new LoginPage(page)
+    dashboardPage = new DashboarPage(page)
     await loginPage.launchURL(data.url)
 })
 test(" @regression Valid Login Test", async () => {
     await loginPage.validLogin(data.email, data.password)
-    await expect(loginPage.homePageIdentifier).toBeVisible()
+    await expect(dashboardPage.homePageIdentifier).toBeVisible()
 })
 
 test("Invalid Login Test", async () => {

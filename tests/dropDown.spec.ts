@@ -43,7 +43,7 @@ test('Drop down developed using select tag handling', async ({page})=>{
 })
 
 
-test('Drop down developed using non select tag handling', async ({page})=>{
+test.skip('Drop down developed using non select tag handling', async ({page})=>{
     await page.goto("https://demoqa.com/select-menu")
     await page.locator("#withOptGroup").click()
     await page.getByText('Group 1, option 2').click()

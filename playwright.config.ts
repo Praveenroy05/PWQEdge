@@ -21,7 +21,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 1: 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 5 : 5,// undefined means 8 test cases will run in a parallel
+  workers: process.env.CI ? 15 : 15,// undefined means 8 test cases will run in a parallel
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [["list"], ["html"], ["github"], ["./state-reporter.js"],['allure-playwright'], ['monocart-reporter']],
   //timeout : 120000,

@@ -21,9 +21,9 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 1: 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 5,// undefined means 8 test cases will run in a parallel
+  workers: process.env.CI ? 5 : 5,// undefined means 8 test cases will run in a parallel
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html'], ['line'], ['allure-playwright'], ['monocart-reporter']],
+  reporter: [["list"], ["html"], ["github"], ["./state-reporter.js"],['allure-playwright'], ['monocart-reporter']],
   //timeout : 120000,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -34,26 +34,26 @@ export default defineConfig({
     trace: 'on',
     screenshot : 'on',
     video: 'on',
-    headless : true,
+    headless : false,
     viewport: { width: 100, height: 100 },
   },
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
 
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
     // },
 
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
 
     /* Test against mobile viewports. */
     // {

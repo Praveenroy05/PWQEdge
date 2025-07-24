@@ -1,0 +1,126 @@
+# Test info
+
+- Name: Handling alerts
+- Location: C:\Users\prave\OneDrive\Documents\Praveen-PW\QEdgePWMay\tests\alerts.spec.ts:10:5
+
+# Error details
+
+```
+Error: page.goto: Test timeout of 30000ms exceeded.
+Call log:
+  - navigating to "https://demoqa.com/alerts", waiting until "load"
+
+    at C:\Users\prave\OneDrive\Documents\Praveen-PW\QEdgePWMay\tests\alerts.spec.ts:11:16
+```
+
+# Page snapshot
+
+```yaml
+- img "adplus-dvertising"
+- iframe
+- banner:
+  - link:
+    - /url: https://demoqa.com
+    - img
+- img
+- text: Elements
+- img
+- img
+- text: Forms
+- img
+- img
+- text: Alerts, Frame & Windows
+- img
+- list:
+  - listitem:
+    - img
+    - text: Browser Windows
+  - listitem:
+    - img
+    - text: Alerts
+  - listitem:
+    - img
+    - text: Frames
+  - listitem:
+    - img
+    - text: Nested Frames
+  - listitem:
+    - img
+    - text: Modal Dialogs
+- img
+- text: Widgets
+- img
+- img
+- text: Interactions
+- img
+- img
+- text: Book Store Application
+- img
+- iframe
+- heading "Alerts" [level=1]
+- text: Click Button to see alert
+- button "Click me"
+- text: On button click, alert will appear after 5 seconds
+- button "Click me"
+- text: On button click, confirm box will appear
+- button "Click me"
+- text: On button click, prompt box will appear
+- button "Click me"
+- iframe
+- img "Build PlayWright tests with AI"
+- iframe
+- iframe
+- contentinfo: © 2013-2020 TOOLSQA.COM | ALL RIGHTS RESERVED.
+```
+
+# Test source
+
+```ts
+   1 | // Alerts - alerts (Ok or cancel), Confirm alert (Ok & Cancel), Prompt alert(Ok, cancel) - Enter some value on the alerts
+   2 |
+   3 | // Launch the url
+   4 | // wait for dialog event to appear on the page
+   5 | // You click on any element - page.locator().click()
+   6 | // ......
+   7 |
+   8 | import {test, expect} from '@playwright/test'
+   9 |
+  10 | test("Handling alerts", async ({page})=>{
+> 11 |     await page.goto("https://demoqa.com/alerts")
+     |                ^ Error: page.goto: Test timeout of 30000ms exceeded.
+  12 |
+  13 |     // wait for dialog events to appear on the page.
+  14 |     // on()
+  15 |     // waitForEvent()
+  16 |
+  17 |     page.on('dialog', function (test) {
+  18 |         console.log(test.message())
+  19 |        // test.accept("Hello")
+  20 |        test.dismiss()
+  21 |     })
+  22 |
+  23 |     await page.locator("#alertButton").click()
+  24 |
+  25 |
+  26 | })
+  27 |
+  28 | test("Handling Prompt alerts", async ({page})=>{
+  29 |     await page.goto("https://demoqa.com/alerts")
+  30 |
+  31 |     // wait for dialog events to appear on the page.
+  32 |     // on()
+  33 |     // waitForEvent()
+  34 |     const text = "Hello"
+  35 |     page.on('dialog', function (test) {
+  36 |         
+  37 |         console.log(test.message())
+  38 |         test.accept(text)
+  39 |        //test.dismiss()
+  40 |     })
+  41 |
+  42 |     await page.locator("#promtButton").click()
+  43 |     await expect(page.locator("#promptResult")).toContainText(`You entered ${text}`)
+  44 |
+  45 |
+  46 | })
+```

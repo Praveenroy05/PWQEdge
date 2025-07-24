@@ -1,0 +1,4 @@
+Row 1 - Name: Firefox, CPU: 79.9 MB, Memory: 0.89 MB/s, Disk: 9.0 Mbps, Network: 8.4%
+Row 2 - Name: Chrome, CPU: 79.7 MB, Memory: 0.39 MB/s, Disk: 3.0 Mbps, Network: 2.8%
+Row 3 - Name: Internet Explorer, CPU: 74.7 MB, Memory: 0.29 MB/s, Disk: 5.7 Mbps, Network: 9.2%
+Row 4 - Name: System, CPU: 72.7 MB, Memory: 0.95 MB/s, Disk: 7.1 Mbps, Network: 7.3%
